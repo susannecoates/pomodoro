@@ -1,5 +1,5 @@
 /*
- * MovementTimer.java
+ * Pomodoro.java
  *
  * Copyright (C) [2023] [Susanne Coates]
  *
@@ -26,14 +26,14 @@ import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
 
 /**
- * The MovementTimer class implements a timer with a user interface to remind users to take regular breaks.
+ * The Pommodoro class implements a timer with a user interface to remind users to take regular breaks.
  * It alternates between a work period and a break period, prompting the user to move or work at each interval.
  * The GUI displays the countdown timer and provides controls to start, stop, reset, and resume the timer.
  * The window remains always on top and the font size of the timer adjusts dynamically with the window size.
  * @author Susanne Coates (scoates@susannecoates.com)
  * @author Jennifer Zahnhiser (jaz-ai@susannecoates.com)
  */
-public class MovementTimer extends JFrame {
+public class Pomodoro extends JFrame {
   // Constants defining the duration of work and break periods in seconds
   private static final int WORK_TIME = 1800; // Duration of the work period
   private static final int BREAK_TIME = 300; // Duration of the break period
@@ -52,10 +52,10 @@ public class MovementTimer extends JFrame {
   private Timer beepTimer; // Keeps track of the beeping timer
 
   /**
-   * Constructs the MovementTimer by setting up the GUI components and 
+   * Constructs the Pomodoro Timer by setting up the GUI components and 
    * initializing the timer logic.
    */
-  public MovementTimer() {
+  public Pomodoro() {
     initializeGuiComponents();
     initializeTimerLogic();
   }
@@ -69,7 +69,7 @@ public class MovementTimer extends JFrame {
    */
   private void initializeGuiComponents() {
     // Set the title and default close operation
-    setTitle("Movement Reminder Timer");
+    setTitle("Work/Break Interval Timer");
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     // Use GridBagLayout for flexibility in resizing
@@ -274,7 +274,7 @@ public class MovementTimer extends JFrame {
    */
   public static void main(String[] args) {
     SwingUtilities.invokeLater(() -> {
-      MovementTimer frame = new MovementTimer();
+      Pomodoro frame = new Pomodoro();
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
       frame.pack();
       frame.setVisible(true);
